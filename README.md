@@ -29,6 +29,6 @@
 ### Clone the repo:
 
 ```bash
-git clone https://github.com/yourusername/webier.git
+git clone https://github.com/hrshittttt/webier.git
 cd webier
 ```
