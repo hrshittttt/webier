@@ -1,10 +1,10 @@
 import Intro from './components/Intro';
-import WhatWeDo from './components/WhatWeDo';
+import Services from './components/Services';
 export default function App() {
   return (
     <>
       <Intro />
-      <WhatWeDo />
+      <Services />
     </>
   );
 }

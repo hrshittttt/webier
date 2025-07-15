@@ -11,7 +11,7 @@ export default function Intro() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
       {/* Sticky Navbar - Centered with White Background */}
-      <nav className="fixed top-4 left-1/2 z-50 -translate-x-1/2 transform">
+      <nav className="fixed top-1 left-1/2 z-50 -translate-x-1/2 transform">
         <div className="flex items-center px-8 py-3 shadow-lg">
           {/* Navigation Links with SplitText Animation */}
           <div className="flex items-center gap-6 space-x-6 rounded-xl bg-black px-5 py-3">
@@ -155,7 +155,7 @@ export default function Intro() {
           </div>
         </div>
 
-        <div className="relative bottom-24 z-30">
+        <div className="relative bottom-16 z-30">
           <CircularText
             text="WEBIER * WEBIER * WEBIER * "
             onHover="speedUp"
