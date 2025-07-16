@@ -34,12 +34,13 @@ export default function Contact() {
           </FadeSlide>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* WhatsApp Integration */}
-                    <SpotlightCard
-            className="whatsapp-section rounded-xl bg-gradient-to-br from-green-900 to-green-800 p-6 md:p-8 transition duration-300 ease-in-out hover:scale-[1.01]"
-            spotlightColor="rgba(34, 197, 94, 0.3)"
-          >
+          <FadeSlide direction="left" delay={0.5} duration={0.8}>
+            <SpotlightCard
+              className="whatsapp-section rounded-xl bg-gradient-to-br from-green-900 to-green-800 p-6 md:p-8 transition duration-300 ease-in-out hover:scale-[1.01] hover:rotate-1"
+              spotlightColor="rgba(34, 197, 94, 0.3)"
+            >
             <div className="flex items-center mb-6">
               <MessageSquare className="text-green-400 mr-3" size={24} />
               <h3 className="text-xl font-bold text-white">Chat with us on WhatsApp</h3>
