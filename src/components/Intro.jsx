@@ -27,8 +27,8 @@ export default function Intro() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['services', 'achievements', 'qualities', 'about-us', 'contact'];
+        const handleScroll = () => {
+      const sections = ['services', 'achievements', 'qualities', 'about-us', 'pricing', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -113,7 +113,7 @@ export default function Intro() {
               >
                 Qualities
               </button>
-              <button
+                            <button
                 onClick={() => scrollToSection('about-us')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'about-us'
@@ -124,6 +124,18 @@ export default function Intro() {
                 }`}
               >
                 About
+              </button>
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'pricing'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'pricing'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                Pricing
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
@@ -177,13 +189,21 @@ export default function Intro() {
               >
                 Qualities
               </button>
-              <button
+                            <button
                 onClick={() => scrollToSection('about-us')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'about-us' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
               >
                 About
+              </button>
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'pricing' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                Pricing
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
