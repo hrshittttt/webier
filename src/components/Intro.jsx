@@ -156,12 +156,12 @@ export default function Intro() {
           </div>
         </div>
 
-        <div className="relative -bottom-8 md:-bottom-16 z-30">
+                <div className="relative bottom-16 z-30">
           <CircularText
             text="WEBIER * WEBIER * WEBIER * "
             onHover="speedUp"
             spinDuration={20}
-            className="text-white scale-75 md:scale-100"
+            className="text-white"
           />
         </div>
       </div>
