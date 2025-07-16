@@ -63,7 +63,7 @@ export default function Contact() {
               </div>
 
               <a
-                href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi! I'm interested in your web development services."
+                href="https://wa.me/+919460701877?text=Hi! I'm interested in your web development services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 group"
@@ -101,7 +101,7 @@ export default function Contact() {
                 <Phone className="text-blue-400 mr-4" size={24} />
                 <div>
                   <h4 className="text-lg font-semibold text-white">Call Us</h4>
-                  <p className="text-gray-300">+91 98765 43210</p>
+                  <p className="text-gray-300">+91 94607 01877 / +91 94140 41181</p>
                 </div>
               </div>
             </SpotlightCard>
@@ -114,7 +114,7 @@ export default function Contact() {
                 <MapPin className="text-purple-400 mr-4" size={24} />
                 <div>
                   <h4 className="text-lg font-semibold text-white">Visit Us</h4>
-                  <p className="text-gray-300">Mumbai, Maharashtra, India</p>
+                  <p className="text-gray-300">Udaipur, Rajasthan, India</p>
                 </div>
               </div>
             </SpotlightCard>
