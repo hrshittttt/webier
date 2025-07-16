@@ -179,8 +179,8 @@ export default function Pricing() {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
+                {/* Bottom CTA */}
+        <div className="text-center flex flex-col justify-center items-center text-4xl">
           <BlurText
             text="✨ We build it clean. We ship it fast. Just two devs with solid skills."
             delay={250}
