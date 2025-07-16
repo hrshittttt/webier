@@ -1,6 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
-import BlurText from '../react-bits/TextAnimations/BlurText';
+import StaggerContainer from '../react-bits/TextAnimations/StaggerContainer';
+import ScaleReveal from '../react-bits/TextAnimations/ScaleReveal';
 
 export default function Achievements() {
   return (
