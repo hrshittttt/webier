@@ -61,8 +61,8 @@ export default function Intro() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-            <SplitText
-              text="Achievements"
+                        <a
+              href="#achievements"
               className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'achievements'
                   ? 'text-white opacity-100'
@@ -70,21 +70,11 @@ export default function Intro() {
                     ? 'text-gray-500 opacity-40'
                     : 'text-white opacity-100'
               }`}
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#achievements"
-            />
-            <SplitText
-              text="Qualities"
+            >
+              Achievements
+            </a>
+            <a
+              href="#qualities"
               className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'qualities'
                   ? 'text-white opacity-100'
@@ -92,21 +82,11 @@ export default function Intro() {
                     ? 'text-gray-500 opacity-40'
                     : 'text-white opacity-100'
               }`}
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#qualities"
-            />
-            <SplitText
-              text="About"
+            >
+              Qualities
+            </a>
+            <a
+              href="#about-us"
               className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'about-us'
                   ? 'text-white opacity-100'
@@ -114,21 +94,11 @@ export default function Intro() {
                     ? 'text-gray-500 opacity-40'
                     : 'text-white opacity-100'
               }`}
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#about-us"
-            />
-            <SplitText
-              text="Contact"
+            >
+              About
+            </a>
+            <a
+              href="#contact"
               className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'contact'
                   ? 'text-white opacity-100'
@@ -136,19 +106,9 @@ export default function Intro() {
                     ? 'text-gray-500 opacity-40'
                     : 'text-white opacity-100'
               }`}
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#contact"
-            />
+            >
+              Contact
+            </a>
           </div>
         </div>
       </nav>
