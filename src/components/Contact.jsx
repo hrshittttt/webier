@@ -31,76 +31,51 @@ export default function Contact() {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* WhatsApp Integration */}
           <SpotlightCard
-            className="contact-form rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 transition duration-300 ease-in-out hover:scale-[1.01]"
-            spotlightColor="rgba(59, 130, 246, 0.2)"
+            className="whatsapp-section rounded-xl bg-gradient-to-br from-green-900 to-green-800 p-8 transition duration-300 ease-in-out hover:scale-[1.01]"
+            spotlightColor="rgba(34, 197, 94, 0.3)"
           >
             <div className="flex items-center mb-6">
-              <MessageSquare className="text-blue-400 mr-3" size={24} />
-              <h3 className="text-xl font-bold text-white">Send us a message</h3>
+              <MessageSquare className="text-green-400 mr-3" size={24} />
+              <h3 className="text-xl font-bold text-white">Chat with us on WhatsApp</h3>
             </div>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
-                    placeholder="Doe"
-                  />
-                </div>
+            <div className="space-y-6">
+              <p className="text-green-100 leading-relaxed">
+                Get instant responses to your queries! Chat with us directly on WhatsApp for quick
+                project discussions, quotes, and support.
+              </p>
+
+              <div className="bg-green-800/50 rounded-lg p-4 border border-green-600/30">
+                <h4 className="text-green-200 font-semibold mb-2">Quick Project Quote</h4>
+                <p className="text-green-100 text-sm">
+                  Send us your project requirements and get a free quote within 24 hours.
+                </p>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
-                  placeholder="john@example.com"
-                />
+              <div className="bg-green-800/50 rounded-lg p-4 border border-green-600/30">
+                <h4 className="text-green-200 font-semibold mb-2">24/7 Support</h4>
+                <p className="text-green-100 text-sm">
+                  Need help with your existing website? We're just a message away.
+                </p>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
-                <select className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:border-blue-400 focus:outline-none transition-colors">
-                  <option>Website Development</option>
-                  <option>E-commerce Solution</option>
-                  <option>Web Application</option>
-                  <option>UI/UX Design</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2"
+              <a
+                href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi! I'm interested in your web development services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 group"
               >
-                <Send size={18} />
-                Send Message
-              </button>
-            </form>
+                <MessageSquare size={20} className="group-hover:scale-110 transition-transform" />
+                Start WhatsApp Chat
+              </a>
+
+              <p className="text-green-200 text-sm text-center">
+                Click the button above to start a conversation with us on WhatsApp
+              </p>
+            </div>
           </SpotlightCard>
 
           {/* Contact Information */}
