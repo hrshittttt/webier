@@ -102,7 +102,7 @@ export default function Intro() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
               <button
-                onClick={(e) => handleNavClick(e, 'services')}
+                                onClick={() => handleNavClick('services')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'services'
                     ? 'text-white opacity-100'
@@ -114,7 +114,7 @@ export default function Intro() {
                 Projects
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'achievements')}
+                                onClick={() => handleNavClick('achievements')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'achievements'
                     ? 'text-white opacity-100'
@@ -126,7 +126,7 @@ export default function Intro() {
                 Achievements
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'qualities')}
+                                onClick={() => handleNavClick('qualities')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'qualities'
                     ? 'text-white opacity-100'
@@ -138,7 +138,7 @@ export default function Intro() {
                 Qualities
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'about-us')}
+                                onClick={() => handleNavClick('about-us')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'about-us'
                     ? 'text-white opacity-100'
@@ -150,7 +150,7 @@ export default function Intro() {
                 About
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'contact')}
+                                onClick={() => handleNavClick('contact')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'contact'
                     ? 'text-white opacity-100'
@@ -178,7 +178,7 @@ export default function Intro() {
           <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 rounded-xl shadow-2xl overflow-hidden">
             <div className="flex flex-col">
               <button
-                onClick={(e) => handleNavClick(e, 'services')}
+                                onClick={() => handleNavClick('services')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'services' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -186,7 +186,7 @@ export default function Intro() {
                 Projects
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'achievements')}
+                                onClick={() => handleNavClick('achievements')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'achievements' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -194,7 +194,7 @@ export default function Intro() {
                 Achievements
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'qualities')}
+                                onClick={() => handleNavClick('qualities')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'qualities' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -202,7 +202,7 @@ export default function Intro() {
                 Qualities
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'about-us')}
+                                onClick={() => handleNavClick('about-us')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'about-us' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -210,7 +210,7 @@ export default function Intro() {
                 About
               </button>
               <button
-                onClick={(e) => handleNavClick(e, 'contact')}
+                                onClick={() => handleNavClick('contact')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'contact' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
