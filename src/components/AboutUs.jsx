@@ -71,53 +71,51 @@ export default function AboutUs() {
           </FadeSlide>
         </div>
 
-                {/* Values Section */}
+                                {/* Values Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <SpotlightCard
-            className="value-card rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-4 md:p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
-            spotlightColor="rgba(147, 51, 234, 0.2)"
-          >
-            <div className="flex items-center mb-4">
-              <Code2 className="text-purple-400 mr-3" size={24} />
-              <h4 className="text-lg font-semibold">Craftsmanship</h4>
-            </div>
-            <p className="text-gray-300 text-sm">
-              Every line of code is written with care, every design element placed with purpose.
-            </p>
-          </SpotlightCard>
+          <ScaleReveal delay={0.8} duration={0.7} scale={0.8}>
+            <SpotlightCard
+              className="value-card rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-4 md:p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:rotate-1"
+              spotlightColor="rgba(147, 51, 234, 0.2)"
+            >
+              <div className="flex items-center mb-4">
+                <Code2 className="text-purple-400 mr-3" size={24} />
+                <h4 className="text-lg font-semibold">Craftsmanship</h4>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Every line of code is written with care, every design element placed with purpose.
+              </p>
+            </SpotlightCard>
+          </ScaleReveal>
 
-          <SpotlightCard
-            className="value-card rounded-xl bg-gradient-to-br from-green-900/50 to-cyan-900/50 p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
-            spotlightColor="rgba(6, 182, 212, 0.2)"
-          >
-            <div className="flex items-center mb-4">
-              <Coffee className="text-green-400 mr-3" size={24} />
-              <h4 className="text-lg font-semibold">Collaboration</h4>
-            </div>
-            <p className="text-gray-300 text-sm">
-              We work closely with our clients, turning ideas into reality through open
-              communication.
-            </p>
-          </SpotlightCard>
+          <ScaleReveal delay={1.0} duration={0.7} scale={0.8}>
+            <SpotlightCard
+              className="value-card rounded-xl bg-gradient-to-br from-green-900/50 to-cyan-900/50 p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:-rotate-1"
+              spotlightColor="rgba(6, 182, 212, 0.2)"
+            >
+              <div className="flex items-center mb-4">
+                <Coffee className="text-green-400 mr-3" size={24} />
+                <h4 className="text-lg font-semibold">Collaboration</h4>
+              </div>
+              <p className="text-gray-300 text-sm">
+                We work closely with our clients, turning ideas into reality through open
+                communication.
+              </p>
+            </SpotlightCard>
+          </ScaleReveal>
         </div>
 
         {/* Team Introduction */}
-        <div className="text-center mt-16">
-          <BlurText
-            text="Ready to bring your vision to life?"
-            delay={200}
-            animateBy="words"
-            direction="bottom"
-            className="text-xl font-bold text-white mb-4"
-          />
-          <BlurText
-            text="Let's create something amazing together."
-            delay={250}
-            animateBy="words"
-            direction="bottom"
-            className="text-gray-300"
-          />
-        </div>
+        <FadeSlide direction="up" delay={1.2} duration={0.8}>
+          <div className="text-center mt-16">
+            <h3 className="text-xl font-bold text-white mb-4">
+              Ready to bring your vision to life?
+            </h3>
+            <p className="text-gray-300">
+              Let's create something amazing together.
+            </p>
+          </div>
+        </FadeSlide>
       </div>
     </section>
   );
