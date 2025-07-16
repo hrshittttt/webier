@@ -59,14 +59,14 @@ export default function Intro() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Sticky Navbar - Centered with Black Background */}
-      <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform">
-        <div className="flex items-center px-8 py-4 shadow-lg">
-          {/* Navigation Links with SplitText Animation */}
-          <div className="flex items-center gap-6 rounded-xl bg-black px-6 py-4">
-            <SplitText
+            {/* Responsive Navbar */}
+      <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform w-full max-w-6xl px-4">
+        <div className="flex items-center justify-center">
+          {/* Navigation Container */}
+          <div className="flex items-center gap-3 md:gap-6 rounded-xl bg-black px-3 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10">
+                        <SplitText
               text="वेबियर"
-              className="mr-12 cursor-pointer text-xl font-bold text-white transition-colors hover:text-gray-400"
+              className="mr-4 md:mr-12 cursor-pointer text-lg md:text-xl font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -79,9 +79,9 @@ export default function Intro() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-                        <a
-              href="#achievements"
-              className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                                    <button
+              onClick={(e) => handleNavClick(e, 'achievements')}
+              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'achievements'
                   ? 'text-white opacity-100'
                   : activeSection && activeSection !== 'achievements'
@@ -90,10 +90,10 @@ export default function Intro() {
               }`}
             >
               Achievements
-            </a>
-            <a
-              href="#qualities"
-              className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+            </button>
+                        <button
+              onClick={(e) => handleNavClick(e, 'qualities')}
+              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'qualities'
                   ? 'text-white opacity-100'
                   : activeSection && activeSection !== 'qualities'
@@ -102,10 +102,10 @@ export default function Intro() {
               }`}
             >
               Qualities
-            </a>
-            <a
-              href="#about-us"
-              className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+            </button>
+                        <button
+              onClick={(e) => handleNavClick(e, 'about-us')}
+              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'about-us'
                   ? 'text-white opacity-100'
                   : activeSection && activeSection !== 'about-us'
@@ -114,10 +114,10 @@ export default function Intro() {
               }`}
             >
               About
-            </a>
-            <a
-              href="#contact"
-              className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+            </button>
+                        <button
+              onClick={(e) => handleNavClick(e, 'contact')}
+              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
                 activeSection === 'contact'
                   ? 'text-white opacity-100'
                   : activeSection && activeSection !== 'contact'
@@ -126,7 +126,7 @@ export default function Intro() {
               }`}
             >
               Contact
-            </a>
+            </button>
           </div>
         </div>
       </nav>
