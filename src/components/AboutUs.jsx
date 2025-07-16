@@ -34,37 +34,41 @@ export default function AboutUs() {
           </FadeSlide>
         </div>
 
-        {/* Story Cards */}
+                {/* Story Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
-          <SpotlightCard
-            className="story-card rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
-            spotlightColor="rgba(59, 130, 246, 0.2)"
-          >
-            <div className="flex items-center mb-6">
-              <Heart className="text-red-400 mr-4" size={32} />
-              <h3 className="text-xl font-bold">Our Mission</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              To democratize beautiful web design and make it accessible to everyone. We believe
-              every business deserves a stunning digital presence that reflects their unique story
-              and values.
-            </p>
-          </SpotlightCard>
+          <FadeSlide direction="left" delay={0.4} duration={0.8}>
+            <SpotlightCard
+              className="story-card rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:rotate-1"
+              spotlightColor="rgba(59, 130, 246, 0.2)"
+            >
+              <div className="flex items-center mb-6">
+                <Heart className="text-red-400 mr-4" size={32} />
+                <h3 className="text-xl font-bold">Our Mission</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                To democratize beautiful web design and make it accessible to everyone. We believe
+                every business deserves a stunning digital presence that reflects their unique story
+                and values.
+              </p>
+            </SpotlightCard>
+          </FadeSlide>
 
-          <SpotlightCard
-            className="story-card rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
-            spotlightColor="rgba(34, 197, 94, 0.2)"
-          >
-            <div className="flex items-center mb-6">
-              <Globe className="text-blue-400 mr-4" size={32} />
-              <h3 className="text-xl font-bold">Our Vision</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              To be the go-to partner for businesses looking to establish a meaningful online
-              presence. We envision a web where every site tells a compelling story and delivers
-              exceptional user experiences.
-            </p>
-          </SpotlightCard>
+          <FadeSlide direction="right" delay={0.6} duration={0.8}>
+            <SpotlightCard
+              className="story-card rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:-rotate-1"
+              spotlightColor="rgba(34, 197, 94, 0.2)"
+            >
+              <div className="flex items-center mb-6">
+                <Globe className="text-blue-400 mr-4" size={32} />
+                <h3 className="text-xl font-bold">Our Vision</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                To be the go-to partner for businesses looking to establish a meaningful online
+                presence. We envision a web where every site tells a compelling story and delivers
+                exceptional user experiences.
+              </p>
+            </SpotlightCard>
+          </FadeSlide>
         </div>
 
                 {/* Values Section */}
