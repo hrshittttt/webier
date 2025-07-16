@@ -1,5 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
-import BlurText from '../react-bits/TextAnimations/BlurText';
+import FadeSlide from '../react-bits/TextAnimations/FadeSlide';
+import TypeWriter from '../react-bits/TextAnimations/TypeWriter';
+import ScaleReveal from '../react-bits/TextAnimations/ScaleReveal';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 
