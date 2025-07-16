@@ -62,12 +62,12 @@ export default function Pricing() {
     },
   ];
 
-  const addOns = [
-    { name: 'Logo Design', price: '₹999' },
-    { name: 'SEO Booster', price: '₹1,999' },
-    { name: 'Admin Panel', price: '₹2,999' },
-    { name: 'Maintenance', price: '₹999/month' },
-    { name: 'WhatsApp Bot', price: '₹2,499' },
+    const addOns = [
+    { name: 'Logo Design', price: '₹999', icon: Palette, gradient: 'from-pink-500 to-rose-500' },
+    { name: 'SEO Booster', price: '₹1,999', icon: Search, gradient: 'from-green-500 to-emerald-500' },
+    { name: 'Admin Panel', price: '₹2,999', icon: Shield, gradient: 'from-blue-500 to-cyan-500' },
+    { name: 'Maintenance', price: '₹999/month', icon: Headphones, gradient: 'from-purple-500 to-indigo-500' },
+    { name: 'WhatsApp Bot', price: '₹2,499', icon: MessageSquare, gradient: 'from-green-600 to-green-500' },
   ];
 
   return (
