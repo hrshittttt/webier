@@ -30,8 +30,8 @@ export default function Intro() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-            <SplitText
-              text="Services"
+                        <SplitText
+              text="Achievements"
               className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
               delay={70}
               duration={1.0}
@@ -44,10 +44,10 @@ export default function Intro() {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
               as="a"
-              href="#services"
+              href="#achievements"
             />
-            <SplitText
-              text="Work"
+                        <SplitText
+              text="Qualities"
               className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
               delay={70}
               duration={1.0}
@@ -60,10 +60,10 @@ export default function Intro() {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
               as="a"
-              href="#work"
+              href="#qualities"
             />
-            <SplitText
-              text="Process"
+                        <SplitText
+              text="About us"
               className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
               delay={70}
               duration={1.0}
@@ -76,40 +76,10 @@ export default function Intro() {
               textAlign="center"
               onLetterAnimationComplete={handleAnimationComplete}
               as="a"
-              href="#process"
+              href="#about-us"
             />
-            <SplitText
-              text="Praise"
-              className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#praise"
-            />
-            <SplitText
-              text="About"
-              className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              as="a"
-              href="#about"
-            />
+            
+            
             <SplitText
               text="Contact"
               className="cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-600"
