@@ -26,14 +26,15 @@ export default function Intro() {
     }
   };
 
-  const handleNavClick = (e, targetId) => {
+    const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false); // Close mobile menu when nav item is clicked
     smoothScrollTo(targetId);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['achievements', 'qualities', 'about-us', 'contact'];
+      const sections = ['services', 'achievements', 'qualities', 'about-us', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
