@@ -1,5 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
+import StaggerContainer from '../react-bits/TextAnimations/StaggerContainer';
+import FadeSlide from '../react-bits/TextAnimations/FadeSlide';
 
 export default function Projects() {
   return (
