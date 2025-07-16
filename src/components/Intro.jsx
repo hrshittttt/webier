@@ -2,254 +2,73 @@ import Silk from '../react-bits/Backgrounds/Silk';
 import BlurText from '../react-bits/TextAnimations/BlurText';
 import CircularText from '../react-bits/TextAnimations/CircularText';
 import TypeWriter from '../react-bits/TextAnimations/TypeWriter';
+import FadeSlide from '../react-bits/TextAnimations/FadeSlide';
+import ScaleReveal from '../react-bits/TextAnimations/ScaleReveal';
 import Navbar from './Navbar';
 
 export default function Intro() {
-  const [activeSection, setActiveSection] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const handleAnimationComplete = () => {
-    console.log('All letters have animated!');
+    console.log('Animation completed!');
   };
-
-  const scrollToSection = (sectionId) => {
-    setIsMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 100;
-      const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  useEffect(() => {
-        const handleScroll = () => {
-      const sections = ['services', 'achievements', 'qualities', 'about-us', 'pricing', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-
-      if (window.scrollY < 300) {
-        setActiveSection('');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Responsive Navbar with Hamburger Menu */}
-      <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform w-full max-w-6xl px-4">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10 w-full max-w-4xl">
-            {/* Brand */}
-            <SplitText
-              text="वेबियर"
-              className="cursor-pointer text-lg md:text-xl font-bold text-white transition-colors hover:text-gray-400"
-              delay={70}
-              duration={1.0}
-              ease="power3.out"
-              splitType="words"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-            />
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6">
-              <button
-                onClick={() => scrollToSection('services')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'services'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'services'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection('achievements')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'achievements'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'achievements'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                Achievements
-              </button>
-              <button
-                onClick={() => scrollToSection('qualities')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'qualities'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'qualities'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                Qualities
-              </button>
-                            <button
-                onClick={() => scrollToSection('about-us')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'about-us'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'about-us'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'pricing'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'pricing'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                Pricing
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
-                  activeSection === 'contact'
-                    ? 'text-white opacity-100'
-                    : activeSection && activeSection !== 'contact'
-                      ? 'text-gray-500 opacity-40'
-                      : 'text-white opacity-100'
-                }`}
-              >
-                Contact
-              </button>
-            </div>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white hover:text-gray-400 transition-colors"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 rounded-xl shadow-2xl overflow-hidden">
-            <div className="flex flex-col">
-              <button
-                onClick={() => scrollToSection('services')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'services' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection('achievements')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'achievements' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                Achievements
-              </button>
-              <button
-                onClick={() => scrollToSection('qualities')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'qualities' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                Qualities
-              </button>
-                            <button
-                onClick={() => scrollToSection('about-us')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'about-us' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'pricing' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                Pricing
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
-                  activeSection === 'contact' ? 'text-white bg-white/5' : 'text-gray-300'
-                }`}
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Use the new Navbar component */}
+      <Navbar />
 
       {/* Hero Section */}
       <div className="relative z-20 flex flex-col items-center pt-20 md:pt-24 px-4">
-        <div className="relative h-[400px] md:h-[575px] w-full max-w-[95vw] md:max-w-10/12 overflow-hidden rounded-xl md:rounded-2xl border border-none shadow-xl">
-          <Silk speed={3.0} scale={1} color="#454545" noiseIntensity={1.0} rotation={0} />
+        <ScaleReveal delay={0.3} duration={1.2} className="w-full flex justify-center">
+          <div className="relative h-[400px] md:h-[575px] w-full max-w-[95vw] md:max-w-10/12 overflow-hidden rounded-xl md:rounded-2xl border border-none shadow-xl">
+            <Silk speed={3.0} scale={1} color="#454545" noiseIntensity={1.0} rotation={0} />
 
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 p-4">
-            <BlurText
-              text="Your digital presence, beautifully crafted."
-              delay={150}
-              animateBy="words"
-              direction="bottom"
-              onAnimationComplete={handleAnimationComplete}
-              className="text-center text-xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight"
-            />
-            <BlurText
-              text="We make cool websites, for fun"
-              delay={150}
-              animateBy="words"
-              direction="bottom"
-              onAnimationComplete={handleAnimationComplete}
-              className="text-center text-sm md:text-md lg:text-lg font-light text-white"
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 p-4">
+              <FadeSlide direction="up" delay={0.8} duration={0.8}>
+                <h1 className="text-center text-xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                  <TypeWriter
+                    text="Your digital presence, beautifully crafted."
+                    speed={80}
+                    delay={1000}
+                    className="text-white"
+                    onComplete={handleAnimationComplete}
+                  />
+                </h1>
+              </FadeSlide>
+
+              <FadeSlide direction="up" delay={1.2} duration={0.6}>
+                <BlurText
+                  text="We make cool websites, for fun"
+                  delay={100}
+                  animateBy="words"
+                  direction="bottom"
+                  className="text-center text-sm md:text-md lg:text-lg font-light text-white"
+                />
+              </FadeSlide>
+
+              <FadeSlide direction="up" delay={1.8} duration={0.6}>
+                <div className="flex gap-4 mt-6">
+                  <button className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 hover:scale-105 transform">
+                    Get Started
+                  </button>
+                  <button className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 transform">
+                    View Work
+                  </button>
+                </div>
+              </FadeSlide>
+            </div>
+          </div>
+        </ScaleReveal>
+
+        <FadeSlide direction="up" delay={2.2} duration={0.8}>
+          <div className="relative bottom-16 z-30">
+            <CircularText
+              text="WEBIER * WEBIER * WEBIER * "
+              onHover="speedUp"
+              spinDuration={20}
+              className="text-white"
             />
           </div>
-        </div>
-
-        <div className="relative bottom-16 z-30">
-          <CircularText
-            text="WEBIER * WEBIER * WEBIER * "
-            onHover="speedUp"
-            spinDuration={20}
-            className="text-white"
-          />
-        </div>
+        </FadeSlide>
       </div>
     </div>
   );
