@@ -133,10 +133,14 @@ export default function Navbar() {
       {isMobileMenuOpen && (
                 <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm animate-in slide-in-from-top duration-300">
           <div className="flex flex-col">
-            {navItems.map((item) => (
+                        {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection(item.id);
+                }}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 hover:scale-105 transform ${
                   activeSection === item.id ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
