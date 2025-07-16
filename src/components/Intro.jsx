@@ -3,9 +3,11 @@ import Silk from '../react-bits/Backgrounds/Silk';
 import SplitText from '../react-bits/TextAnimations/SplitText';
 import BlurText from '../react-bits/TextAnimations/BlurText';
 import CircularText from '../react-bits/TextAnimations/CircularText';
+import { Menu, X } from 'lucide-react';
 
 export default function Intro() {
   const [activeSection, setActiveSection] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
