@@ -162,18 +162,21 @@ export default function Pricing() {
           />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-          {addOns.map((addon, index) => (
-            <SpotlightCard
-              key={index}
-              className="addon-card rounded-lg bg-gradient-to-br from-slate-800 to-slate-700 p-4 text-center transition duration-300 ease-in-out hover:scale-[1.05]"
-              spotlightColor="rgba(148, 163, 184, 0.2)"
-            >
-              <Wrench size={20} className="text-gray-300 mx-auto mb-2" />
-              <h4 className="text-white font-semibold text-sm mb-1">{addon.name}</h4>
-              <p className="text-gray-300 text-xs">{addon.price}</p>
-            </SpotlightCard>
-          ))}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+          {addOns.map((addon, index) => {
+            const IconComponent = addon.icon;
+            return (
+              <SpotlightCard
+                key={index}
+                className={`addon-card rounded-lg bg-gradient-to-br ${addon.gradient} p-4 text-center transition duration-300 ease-in-out hover:scale-[1.05]`}
+                spotlightColor="rgba(255, 255, 255, 0.2)"
+              >
+                <IconComponent size={20} className="text-white mx-auto mb-2" />
+                <h4 className="text-white font-semibold text-sm mb-1">{addon.name}</h4>
+                <p className="text-white/80 text-xs">{addon.price}</p>
+              </SpotlightCard>
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
