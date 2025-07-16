@@ -11,10 +11,25 @@ export default function Intro() {
     console.log('All letters have animated!');
   };
 
-    useEffect(() => {
-    // Add smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
+      const smoothScrollTo = (targetId) => {
+    const target = document.getElementById(targetId);
+    if (target) {
+      const headerHeight = 100; // Account for fixed navbar
+      const targetPosition = target.offsetTop - headerHeight;
 
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    smoothScrollTo(targetId);
+  };
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = ['achievements', 'qualities', 'about-us', 'contact'];
       const scrollPosition = window.scrollY + 200;
@@ -39,10 +54,7 @@ export default function Intro() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.documentElement.style.scrollBehavior = 'auto';
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
