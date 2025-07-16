@@ -98,10 +98,14 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
+                        {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection(item.id);
+                }}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white hover:scale-105 transform ${
                   activeSection === item.id
                     ? 'text-white opacity-100 scale-105'
