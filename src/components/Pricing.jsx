@@ -81,22 +81,23 @@ export default function Pricing() {
       />
 
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
+                {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <BlurText
-            text="📦 Webier Pricing Plans"
-            delay={100}
-            animateBy="words"
-            direction="bottom"
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4"
-          />
-          <BlurText
-            text="Just two devs. Clean, custom websites. Priced right."
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
-          />
+          <FadeSlide direction="down" delay={0.3} duration={1.0}>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4">
+              <TypeWriter
+                text="📦 Webier Pricing Plans"
+                speed={100}
+                delay={500}
+                className="text-white"
+              />
+            </h1>
+          </FadeSlide>
+          <FadeSlide direction="up" delay={0.8} duration={0.8}>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4">
+              Just two devs. Clean, custom websites. Priced right.
+            </p>
+          </FadeSlide>
         </div>
 
         {/* Pricing Cards */}
