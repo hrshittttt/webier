@@ -131,19 +131,19 @@ export default function Intro() {
         </div>
       </nav>
 
-      {/* Silk Box */}
-      <div className="relative z-20 flex flex-col items-center pt-24">
-        <div className="relative h-[575px] w-[90vw] max-w-10/12 overflow-hidden rounded-2xl border border-none shadow-xl">
+            {/* Hero Section */}
+      <div className="relative z-20 flex flex-col items-center pt-20 md:pt-24 px-4">
+        <div className="relative h-[400px] md:h-[575px] w-full max-w-[95vw] md:max-w-10/12 overflow-hidden rounded-xl md:rounded-2xl border border-none shadow-xl">
           <Silk speed={3.0} scale={1} color="#454545" noiseIntensity={1.0} rotation={0} />
 
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 p-4">
             <BlurText
               text="Your digital presence, beautifully crafted."
               delay={150}
               animateBy="words"
               direction="bottom"
               onAnimationComplete={handleAnimationComplete}
-              className="text-center text-3xl font-extrabold text-white md:text-4xl"
+              className="text-center text-xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight"
             />
             <BlurText
               text="We make cool websites, for fun"
@@ -151,17 +151,17 @@ export default function Intro() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={handleAnimationComplete}
-              className="text-md text-center font-light text-white md:text-lg"
+              className="text-center text-sm md:text-md lg:text-lg font-light text-white"
             />
           </div>
         </div>
 
-        <div className="relative bottom-16 z-30">
+        <div className="relative -bottom-8 md:-bottom-16 z-30">
           <CircularText
             text="WEBIER * WEBIER * WEBIER * "
             onHover="speedUp"
             spinDuration={20}
-            className="text-white"
+            className="text-white scale-75 md:scale-100"
           />
         </div>
       </div>
