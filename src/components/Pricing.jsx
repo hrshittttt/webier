@@ -181,7 +181,36 @@ export default function Pricing() {
               </SpotlightCard>
             );
           })}
+                </div>
+        </StaggerContainer>
+
+        {/* Add-ons Section */}
+        <div className="text-center mb-8">
+          <FadeSlide direction="up" delay={1.0} duration={0.6}>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-8">
+              🔧 Optional Add-Ons
+            </h3>
+          </FadeSlide>
         </div>
+
+        <StaggerContainer staggerDelay={0.1} initialDelay={1.2}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+            {addOns.map((addon, index) => {
+              const IconComponent = addon.icon;
+              return (
+                <SpotlightCard
+                  key={index}
+                  className={`addon-card rounded-lg bg-gradient-to-br ${addon.gradient} p-4 text-center transition duration-300 ease-in-out hover:scale-[1.05] hover:rotate-2`}
+                  spotlightColor="rgba(255, 255, 255, 0.2)"
+                >
+                  <IconComponent size={20} className="text-white mx-auto mb-2" />
+                  <h4 className="text-white font-semibold text-sm mb-1">{addon.name}</h4>
+                  <p className="text-white/80 text-xs">{addon.price}</p>
+                </SpotlightCard>
+              );
+            })}
+          </div>
+        </StaggerContainer>
 
                 {/* Bottom CTA */}
         <div className="text-center flex flex-col justify-center items-center text-4xl">
