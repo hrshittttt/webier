@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
 import Silk from '../react-bits/Backgrounds/Silk';
-import SplitText from '../react-bits/TextAnimations/SplitText';
 import BlurText from '../react-bits/TextAnimations/BlurText';
 import CircularText from '../react-bits/TextAnimations/CircularText';
-import { Menu, X } from 'lucide-react';
+import TypeWriter from '../react-bits/TextAnimations/TypeWriter';
+import Navbar from './Navbar';
 
 export default function Intro() {
   const [activeSection, setActiveSection] = useState('');
