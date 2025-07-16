@@ -86,7 +86,8 @@ export default function Achievements() {
               Constantly pushing boundaries in web development
             </div>
           </SpotlightCard>
-        </div>
+                </div>
+        </StaggerContainer>
       </div>
     </section>
   );
