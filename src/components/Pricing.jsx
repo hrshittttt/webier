@@ -1,5 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
-import BlurText from '../react-bits/TextAnimations/BlurText';
+import FadeSlide from '../react-bits/TextAnimations/FadeSlide';
+import TypeWriter from '../react-bits/TextAnimations/TypeWriter';
+import StaggerContainer from '../react-bits/TextAnimations/StaggerContainer';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
 import { Check, Package, Star, Zap, Rocket, Palette, Search, Shield, Headphones, MessageSquare } from 'lucide-react';
 
