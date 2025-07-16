@@ -3,7 +3,7 @@ import SpotlightCard from '../react-bits/Components/SpotlightCard';
 
 export default function Projects() {
   return (
-        <div className="relative bottom-10 px-4 md:px-6">
+            <section id="services" className="relative bottom-10 px-4 md:px-6">
       <ScrollVelocity
         texts={['| webier.in', 'Our Projects... just BETTER |']}
         velocity={40}
