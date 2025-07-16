@@ -100,8 +100,9 @@ export default function Pricing() {
           </FadeSlide>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+                {/* Pricing Cards */}
+        <StaggerContainer staggerDelay={0.2} initialDelay={0.5}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             return (
