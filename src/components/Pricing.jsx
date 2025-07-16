@@ -155,34 +155,7 @@ export default function Pricing() {
           })}
         </div>
 
-        {/* Add-ons Section */}
-        <div className="text-center mb-8">
-          <BlurText
-            text="🔧 Optional Add-Ons"
-            delay={200}
-            animateBy="words"
-            direction="bottom"
-            className="text-xl md:text-2xl font-bold text-white mb-8"
-          />
-        </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-          {addOns.map((addon, index) => {
-            const IconComponent = addon.icon;
-            return (
-              <SpotlightCard
-                key={index}
-                className={`addon-card rounded-lg bg-gradient-to-br ${addon.gradient} p-4 text-center transition duration-300 ease-in-out hover:scale-[1.05]`}
-                spotlightColor="rgba(255, 255, 255, 0.2)"
-              >
-                <IconComponent size={20} className="text-white mx-auto mb-2" />
-                <h4 className="text-white font-semibold text-sm mb-1">{addon.name}</h4>
-                <p className="text-white/80 text-xs">{addon.price}</p>
-              </SpotlightCard>
-            );
-          })}
-                </div>
-        </StaggerContainer>
+                </StaggerContainer>
 
         {/* Add-ons Section */}
         <div className="text-center mb-8">
