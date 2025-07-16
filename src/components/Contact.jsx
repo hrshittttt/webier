@@ -15,22 +15,23 @@ export default function Contact() {
       />
 
             <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
+                {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <BlurText
-            text="Ready to start your next project?"
-            delay={100}
-            animateBy="words"
-            direction="bottom"
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4"
-          />
-          <BlurText
-            text="We'd love to hear from you. Send us a message and we'll respond as soon as possible."
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
-          />
+          <FadeSlide direction="down" delay={0.3} duration={1.0}>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4">
+              <TypeWriter
+                text="Ready to start your next project?"
+                speed={80}
+                delay={500}
+                className="text-white"
+              />
+            </h1>
+          </FadeSlide>
+          <FadeSlide direction="up" delay={0.8} duration={0.8}>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4">
+              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+          </FadeSlide>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
