@@ -1,5 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
+import StaggerContainer from '../react-bits/TextAnimations/StaggerContainer';
+import ScaleReveal from '../react-bits/TextAnimations/ScaleReveal';
 import { Code, Palette, Zap, Users, Shield, Rocket } from 'lucide-react';
 
 export default function Qualities() {
