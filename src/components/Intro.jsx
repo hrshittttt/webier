@@ -13,16 +13,58 @@ export default function Intro() {
     console.log('All letters have animated!');
   };
 
-  const smoothScrollTo = (targetId) => {
+    const smoothScrollTo = (targetId) => {
+    console.log('Attempting to scroll to:', targetId);
     const target = document.getElementById(targetId);
+
     if (target) {
-      const headerHeight = 100; // Account for fixed navbar
+      console.log('Target found:', target, 'Offset top:', target.offsetTop);
+      const headerHeight = 120; // Account for fixed navbar
       const targetPosition = target.offsetTop - headerHeight;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
+      console.log('Scrolling to position:', targetPosition);
+
+      // Enhanced smooth scrolling with custom easing
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 1000; // 1 second animation
+      let start = null;
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // Easing function for smooth animation
+        const ease = (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        const run = startPosition + distance * ease(progress);
+
+        window.scrollTo(0, run);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    } else {
+      console.error('Target element not found:', targetId);
+      // Fallback: try to scroll to approximate positions
+      const fallbackPositions = {
+        'services': 800,
+        'achievements': 1600,
+        'qualities': 2400,
+        'about-us': 3200,
+        'contact': 4000
+      };
+
+      if (fallbackPositions[targetId]) {
+        console.log('Using fallback position for:', targetId);
+        window.scrollTo({
+          top: fallbackPositions[targetId],
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
