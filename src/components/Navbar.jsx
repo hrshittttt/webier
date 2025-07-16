@@ -120,7 +120,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm animate-in slide-in-from-top duration-300">
+                <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm animate-in slide-in-from-top duration-300">
           <div className="flex flex-col">
             {navItems.map((item) => (
               <button
