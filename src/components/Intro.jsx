@@ -10,14 +10,14 @@ export default function Intro() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Sticky Navbar - Centered with Black Background */}
-      <nav className="fixed top-1 left-1/2 z-50 -translate-x-1/2 transform">
-        <div className="flex items-center px-6 py-3 shadow-lg">
+            {/* Sticky Navbar - Centered with Black Background */}
+      <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform">
+        <div className="flex items-center px-8 py-4 shadow-lg">
           {/* Navigation Links with SplitText Animation */}
-          <div className="flex items-center gap-4 rounded-xl bg-black px-4 py-3">
-            <SplitText
+          <div className="flex items-center gap-6 rounded-xl bg-black px-6 py-4">
+                        <SplitText
               text="वेबियर"
-              className="mr-8 cursor-pointer text-lg font-bold text-white transition-colors hover:text-gray-400"
+              className="mr-12 cursor-pointer text-xl font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -30,9 +30,9 @@ export default function Intro() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-            <SplitText
+                        <SplitText
               text="Achievements"
-              className="cursor-pointer text-sm font-bold text-white transition-colors hover:text-gray-400"
+              className="cursor-pointer text-base font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -46,9 +46,9 @@ export default function Intro() {
               as="a"
               href="#achievements"
             />
-            <SplitText
+                        <SplitText
               text="Qualities"
-              className="cursor-pointer text-sm font-bold text-white transition-colors hover:text-gray-400"
+              className="cursor-pointer text-base font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -62,9 +62,9 @@ export default function Intro() {
               as="a"
               href="#qualities"
             />
-            <SplitText
+                        <SplitText
               text="About"
-              className="cursor-pointer text-sm font-bold text-white transition-colors hover:text-gray-400"
+              className="cursor-pointer text-base font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -78,9 +78,9 @@ export default function Intro() {
               as="a"
               href="#about-us"
             />
-            <SplitText
+                        <SplitText
               text="Contact"
-              className="cursor-pointer text-sm font-bold text-white transition-colors hover:text-gray-400"
+              className="cursor-pointer text-base font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
