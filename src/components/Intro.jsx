@@ -11,7 +11,10 @@ export default function Intro() {
     console.log('All letters have animated!');
   };
 
-  useEffect(() => {
+    useEffect(() => {
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+
     const handleScroll = () => {
       const sections = ['achievements', 'qualities', 'about-us', 'contact'];
       const scrollPosition = window.scrollY + 200;
@@ -36,7 +39,10 @@ export default function Intro() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
   }, []);
 
   return (
