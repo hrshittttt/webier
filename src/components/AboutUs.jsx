@@ -64,10 +64,10 @@ export default function AboutUs() {
           </SpotlightCard>
         </div>
 
-        {/* Values Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Values Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <SpotlightCard
-            className="value-card rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
+            className="value-card rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-4 md:p-6 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
             spotlightColor="rgba(147, 51, 234, 0.2)"
           >
             <div className="flex items-center mb-4">
