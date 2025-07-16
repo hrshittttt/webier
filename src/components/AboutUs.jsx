@@ -12,27 +12,27 @@ export default function AboutUs() {
         className="custom-scroll-text text-center text-[#b2b2b2] mb-16"
       />
 
-      <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto px-4">
         {/* Main About Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <BlurText
             text="We are passionate web developers who believe in creating digital experiences that matter."
             delay={100}
             animateBy="words"
             direction="bottom"
-            className="text-2xl md:text-3xl font-bold text-white mb-8 leading-relaxed"
+            className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 md:mb-8 leading-relaxed px-4"
           />
           <BlurText
             text="Based on creativity, powered by technology, and driven by results."
             delay={150}
             animateBy="words"
             direction="bottom"
-            className="text-lg text-gray-300 mb-12"
+            className="text-base md:text-lg text-gray-300 mb-8 md:mb-12 px-4"
           />
         </div>
 
         {/* Story Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           <SpotlightCard
             className="story-card rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
             spotlightColor="rgba(59, 130, 246, 0.2)"
