@@ -79,7 +79,14 @@ export default function Navbar() {
       <div className="flex items-center justify-center">
                 <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl w-full max-w-4xl backdrop-blur-sm">
           {/* Brand */}
-          <button onClick={scrollToTop} className="cursor-pointer">
+                    <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              scrollToTop();
+            }}
+            className="cursor-pointer"
+          >
             <SplitText
               text="वेबियर"
               className="text-lg md:text-xl font-bold text-white transition-colors hover:text-gray-400"
