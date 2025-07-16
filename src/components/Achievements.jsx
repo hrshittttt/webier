@@ -1,6 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
-import BlurText from '../react-bits/TextAnimations/BlurText';
+import StaggerContainer from '../react-bits/TextAnimations/StaggerContainer';
+import ScaleReveal from '../react-bits/TextAnimations/ScaleReveal';
 
 export default function Achievements() {
   return (
@@ -12,7 +13,8 @@ export default function Achievements() {
       />
 
             <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <StaggerContainer staggerDelay={0.15} initialDelay={0.2}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {/* Achievement 1 */}
           <SpotlightCard
             className="achievement-card flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02]"
@@ -84,7 +86,8 @@ export default function Achievements() {
               Constantly pushing boundaries in web development
             </div>
           </SpotlightCard>
-        </div>
+                </div>
+        </StaggerContainer>
       </div>
     </section>
   );
