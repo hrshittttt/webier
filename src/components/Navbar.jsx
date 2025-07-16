@@ -70,7 +70,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform w-full max-w-6xl px-4">
       <div className="flex items-center justify-center">
-        <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10 w-full max-w-4xl backdrop-blur-sm">
+                <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl w-full max-w-4xl backdrop-blur-sm">
           {/* Brand */}
           <button onClick={scrollToTop} className="cursor-pointer">
             <SplitText
