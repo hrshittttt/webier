@@ -53,24 +53,32 @@ export default function Qualities() {
       />
 
             <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {qualities.map((quality, index) => {
-            const IconComponent = quality.icon;
-            return (
-              <SpotlightCard
-                key={index}
-                className={`quality-card flex flex-col items-start justify-start rounded-xl bg-gradient-to-br ${quality.gradient} p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02] min-h-[280px]`}
-                spotlightColor="rgba(255, 255, 255, 0.1)"
-              >
-                <div className="mb-6">
-                  <IconComponent size={48} className="text-white/90" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{quality.title}</h3>
-                <p className="text-white/80 leading-relaxed">{quality.description}</p>
-              </SpotlightCard>
-            );
-          })}
-        </div>
+                <StaggerContainer staggerDelay={0.2} initialDelay={0.3}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {qualities.map((quality, index) => {
+              const IconComponent = quality.icon;
+              return (
+                <ScaleReveal
+                  key={index}
+                  delay={index * 0.1}
+                  duration={0.8}
+                  scale={0.7}
+                >
+                  <SpotlightCard
+                    className={`quality-card flex flex-col items-start justify-start rounded-xl bg-gradient-to-br ${quality.gradient} p-8 text-white transition duration-300 ease-in-out hover:scale-[1.02] hover:rotate-1 min-h-[280px]`}
+                    spotlightColor="rgba(255, 255, 255, 0.1)"
+                  >
+                    <div className="mb-6">
+                      <IconComponent size={48} className="text-white/90" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{quality.title}</h3>
+                    <p className="text-white/80 leading-relaxed">{quality.description}</p>
+                  </SpotlightCard>
+                </ScaleReveal>
+              );
+            })}
+          </div>
+        </StaggerContainer>
       </div>
     </section>
   );
