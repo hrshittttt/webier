@@ -163,18 +163,7 @@ export default function Intro() {
               </button>
             </div>
 
-                        {/* Test Debug Button - Remove this later */}
-            <button
-              onClick={() => {
-                console.log('Test button clicked!');
-                alert('Button works!');
-              }}
-              className="hidden md:block px-2 py-1 text-xs bg-red-500 text-white rounded"
-            >
-              Test
-            </button>
-
-            {/* Mobile Hamburger Button */}
+                                    {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden text-white hover:text-gray-400 transition-colors"
