@@ -3,14 +3,14 @@ import SpotlightCard from '../react-bits/Components/SpotlightCard';
 
 export default function Projects() {
   return (
-    <div className="relative bottom-10 px-6">
+        <div className="relative bottom-10 px-4 md:px-6">
       <ScrollVelocity
         texts={['| webier.in', 'Our Projects... just BETTER |']}
         velocity={40}
         className="custom-scroll-text text-center text-[#b2b2b2]"
       />
 
-      <div className="mt-24 grid grid-cols-1 gap-10 text-white sm:grid-cols-2">
+      <div className="mt-16 md:mt-24 grid grid-cols-1 gap-6 md:gap-10 text-white sm:grid-cols-2 max-w-6xl mx-auto">
         {/* Project 1 */}
         <div className="space-y-4">
           {/* Project 1 */}
