@@ -1,12 +1,43 @@
+import { useState, useEffect } from 'react';
 import Silk from '../react-bits/Backgrounds/Silk';
 import SplitText from '../react-bits/TextAnimations/SplitText';
 import BlurText from '../react-bits/TextAnimations/BlurText';
 import CircularText from '../react-bits/TextAnimations/CircularText';
 
 export default function Intro() {
+  const [activeSection, setActiveSection] = useState('');
+
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['achievements', 'qualities', 'about-us', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+
+      // If we're at the top, no section is active
+      if (window.scrollY < 300) {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
