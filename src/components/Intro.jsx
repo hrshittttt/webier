@@ -13,7 +13,7 @@ export default function Intro() {
     console.log('All letters have animated!');
   };
 
-      const smoothScrollTo = (targetId) => {
+  const smoothScrollTo = (targetId) => {
     const target = document.getElementById(targetId);
     if (target) {
       const headerHeight = 100; // Account for fixed navbar
@@ -21,12 +21,12 @@ export default function Intro() {
 
       window.scrollTo({
         top: targetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
-    const handleNavClick = (e, targetId) => {
+  const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setIsMobileMenuOpen(false); // Close mobile menu when nav item is clicked
     smoothScrollTo(targetId);
@@ -62,14 +62,15 @@ export default function Intro() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-            {/* Responsive Navbar */}
+      {/* Responsive Navbar with Hamburger Menu */}
       <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform w-full max-w-6xl px-4">
         <div className="flex items-center justify-center">
           {/* Navigation Container */}
-          <div className="flex items-center gap-3 md:gap-6 rounded-xl bg-black px-3 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10">
-                        <SplitText
+          <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10 w-full max-w-4xl">
+            {/* Brand */}
+            <SplitText
               text="वेबियर"
-              className="mr-4 md:mr-12 cursor-pointer text-lg md:text-xl font-bold text-white transition-colors hover:text-gray-400"
+              className="cursor-pointer text-lg md:text-xl font-bold text-white transition-colors hover:text-gray-400"
               delay={70}
               duration={1.0}
               ease="power3.out"
@@ -82,59 +83,130 @@ export default function Intro() {
               onLetterAnimationComplete={handleAnimationComplete}
             />
 
-                                    <button
-              onClick={(e) => handleNavClick(e, 'achievements')}
-              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
-                activeSection === 'achievements'
-                  ? 'text-white opacity-100'
-                  : activeSection && activeSection !== 'achievements'
-                    ? 'text-gray-500 opacity-40'
-                    : 'text-white opacity-100'
-              }`}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-6">
+              <button
+                onClick={(e) => handleNavClick(e, 'services')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'services'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'services'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                Projects
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'achievements')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'achievements'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'achievements'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                Achievements
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'qualities')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'qualities'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'qualities'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                Qualities
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'about-us')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'about-us'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'about-us'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                About
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'contact')}
+                className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
+                  activeSection === 'contact'
+                    ? 'text-white opacity-100'
+                    : activeSection && activeSection !== 'contact'
+                      ? 'text-gray-500 opacity-40'
+                      : 'text-white opacity-100'
+                }`}
+              >
+                Contact
+              </button>
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-white hover:text-gray-400 transition-colors"
             >
-              Achievements
-            </button>
-                        <button
-              onClick={(e) => handleNavClick(e, 'qualities')}
-              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
-                activeSection === 'qualities'
-                  ? 'text-white opacity-100'
-                  : activeSection && activeSection !== 'qualities'
-                    ? 'text-gray-500 opacity-40'
-                    : 'text-white opacity-100'
-              }`}
-            >
-              Qualities
-            </button>
-                        <button
-              onClick={(e) => handleNavClick(e, 'about-us')}
-              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
-                activeSection === 'about-us'
-                  ? 'text-white opacity-100'
-                  : activeSection && activeSection !== 'about-us'
-                    ? 'text-gray-500 opacity-40'
-                    : 'text-white opacity-100'
-              }`}
-            >
-              About
-            </button>
-                        <button
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className={`cursor-pointer text-sm md:text-base font-bold transition-all duration-300 hover:text-white ${
-                activeSection === 'contact'
-                  ? 'text-white opacity-100'
-                  : activeSection && activeSection !== 'contact'
-                    ? 'text-gray-500 opacity-40'
-                    : 'text-white opacity-100'
-              }`}
-            >
-              Contact
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+            <div className="flex flex-col">
+              <button
+                onClick={(e) => handleNavClick(e, 'services')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'services' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                Projects
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'achievements')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'achievements' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                Achievements
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'qualities')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'qualities' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                Qualities
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'about-us')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'about-us' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                About
+              </button>
+              <button
+                onClick={(e) => handleNavClick(e, 'contact')}
+                className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
+                  activeSection === 'contact' ? 'text-white bg-white/5' : 'text-gray-300'
+                }`}
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
-            {/* Hero Section */}
+      {/* Hero Section */}
       <div className="relative z-20 flex flex-col items-center pt-20 md:pt-24 px-4">
         <div className="relative h-[400px] md:h-[575px] w-full max-w-[95vw] md:max-w-10/12 overflow-hidden rounded-xl md:rounded-2xl border border-none shadow-xl">
           <Silk speed={3.0} scale={1} color="#454545" noiseIntensity={1.0} rotation={0} />
@@ -159,7 +231,7 @@ export default function Intro() {
           </div>
         </div>
 
-                <div className="relative bottom-16 z-30">
+        <div className="relative bottom-16 z-30">
           <CircularText
             text="WEBIER * WEBIER * WEBIER * "
             onHover="speedUp"
