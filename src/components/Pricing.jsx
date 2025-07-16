@@ -212,23 +212,17 @@ export default function Pricing() {
           </div>
         </StaggerContainer>
 
-                {/* Bottom CTA */}
-        <div className="text-center flex flex-col justify-center items-center text-4xl">
-          <BlurText
-            text="✨ We build it clean. We ship it fast. Just two devs with solid skills."
-            delay={250}
-            animateBy="words"
-            direction="bottom"
-            className="text-lg text-gray-300 mb-6"
-          />
-          <BlurText
-            text="📩 Let's build: webier.in"
-            delay={300}
-            animateBy="words"
-            direction="bottom"
-            className="text-xl font-bold text-white"
-          />
-        </div>
+                        {/* Bottom CTA */}
+        <FadeSlide direction="up" delay={1.5} duration={0.8}>
+          <div className="text-center flex flex-col justify-center items-center text-4xl">
+            <p className="text-lg text-gray-300 mb-6">
+              ✨ We build it clean. We ship it fast. Just two devs with solid skills.
+            </p>
+            <p className="text-xl font-bold text-white">
+              📩 Let's build: webier.in
+            </p>
+          </div>
+        </FadeSlide>
       </div>
     </section>
   );
