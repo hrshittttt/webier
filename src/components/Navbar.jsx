@@ -10,16 +10,23 @@ export default function Navbar() {
     console.log('Navbar animation completed!');
   };
 
-  const scrollToSection = (sectionId) => {
+    const scrollToSection = (sectionId) => {
     setIsMobileMenuOpen(false);
+    console.log('Scrolling to section:', sectionId);
+
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 100;
+      const headerHeight = 80;
       const targetPosition = element.offsetTop - headerHeight;
+
+      console.log('Element found, scrolling to:', targetPosition);
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth',
       });
+    } else {
+      console.log('Element not found:', sectionId);
     }
   };
 
