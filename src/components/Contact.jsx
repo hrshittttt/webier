@@ -12,29 +12,29 @@ export default function Contact() {
         className="custom-scroll-text text-center text-[#b2b2b2] mb-16"
       />
 
-      <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <BlurText
             text="Ready to start your next project?"
             delay={100}
             animateBy="words"
             direction="bottom"
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 px-4"
           />
           <BlurText
             text="We'd love to hear from you. Send us a message and we'll respond as soon as possible."
             delay={150}
             animateBy="words"
             direction="bottom"
-            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
           />
         </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* WhatsApp Integration */}
-          <SpotlightCard
-            className="whatsapp-section rounded-xl bg-gradient-to-br from-green-900 to-green-800 p-8 transition duration-300 ease-in-out hover:scale-[1.01]"
+                    <SpotlightCard
+            className="whatsapp-section rounded-xl bg-gradient-to-br from-green-900 to-green-800 p-6 md:p-8 transition duration-300 ease-in-out hover:scale-[1.01]"
             spotlightColor="rgba(34, 197, 94, 0.3)"
           >
             <div className="flex items-center mb-6">
