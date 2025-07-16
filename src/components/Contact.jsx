@@ -130,8 +130,8 @@ export default function Contact() {
                 We typically respond to all inquiries within 24 hours. For urgent projects, feel
                 free to call us directly.
               </p>
-            </div>
-          </div>
+                        </div>
+          </FadeSlide>
         </div>
       </div>
     </section>
