@@ -1,7 +1,7 @@
 import ScrollVelocity from '../react-bits/TextAnimations/ScrollVelocity';
 import BlurText from '../react-bits/TextAnimations/BlurText';
 import SpotlightCard from '../react-bits/Components/SpotlightCard';
-import { Check, Package, Star, Zap, Rocket, Wrench } from 'lucide-react';
+import { Check, Package, Star, Zap, Rocket, Palette, Search, Shield, Headphones, MessageSquare } from 'lucide-react';
 
 export default function Pricing() {
   const plans = [
