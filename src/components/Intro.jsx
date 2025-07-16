@@ -13,39 +13,17 @@ export default function Intro() {
     console.log('All letters have animated!');
   };
 
-      const handleNavClick = (targetId) => {
-    console.log('Clicking navigation to:', targetId);
-    setIsMobileMenuOpen(false); // Close mobile menu when nav item is clicked
-
-    // Simple and reliable scrolling
-    setTimeout(() => {
-      const target = document.getElementById(targetId);
-      if (target) {
-        console.log('Found target:', targetId);
-        const headerHeight = 100;
-        const targetPosition = target.offsetTop - headerHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-        console.log('Target not found, trying fallback');
-        // Fallback scroll positions
-        const positions = {
-          'services': 800,
-          'achievements': 1600,
-          'qualities': 2400,
-          'about-us': 3200,
-          'contact': 4000
-        };
-
-        window.scrollTo({
-          top: positions[targetId] || 0,
-          behavior: 'smooth'
-        });
-      }
-    }, 50);
+  const scrollToSection = (sectionId) => {
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 100;
+      const targetPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   useEffect(() => {
@@ -66,7 +44,6 @@ export default function Intro() {
         }
       }
 
-      // If we're at the top, no section is active
       if (window.scrollY < 300) {
         setActiveSection('');
       }
@@ -81,7 +58,6 @@ export default function Intro() {
       {/* Responsive Navbar with Hamburger Menu */}
       <nav className="fixed top-2 left-1/2 z-50 -translate-x-1/2 transform w-full max-w-6xl px-4">
         <div className="flex items-center justify-center">
-          {/* Navigation Container */}
           <div className="flex items-center justify-between rounded-xl bg-black px-4 md:px-6 py-3 md:py-4 shadow-2xl border border-white/10 w-full max-w-4xl">
             {/* Brand */}
             <SplitText
@@ -102,7 +78,7 @@ export default function Intro() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
               <button
-                                onClick={() => handleNavClick('services')}
+                onClick={() => scrollToSection('services')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'services'
                     ? 'text-white opacity-100'
@@ -114,7 +90,7 @@ export default function Intro() {
                 Projects
               </button>
               <button
-                                onClick={() => handleNavClick('achievements')}
+                onClick={() => scrollToSection('achievements')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'achievements'
                     ? 'text-white opacity-100'
@@ -126,7 +102,7 @@ export default function Intro() {
                 Achievements
               </button>
               <button
-                                onClick={() => handleNavClick('qualities')}
+                onClick={() => scrollToSection('qualities')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'qualities'
                     ? 'text-white opacity-100'
@@ -138,7 +114,7 @@ export default function Intro() {
                 Qualities
               </button>
               <button
-                                onClick={() => handleNavClick('about-us')}
+                onClick={() => scrollToSection('about-us')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'about-us'
                     ? 'text-white opacity-100'
@@ -150,7 +126,7 @@ export default function Intro() {
                 About
               </button>
               <button
-                                onClick={() => handleNavClick('contact')}
+                onClick={() => scrollToSection('contact')}
                 className={`cursor-pointer text-base font-bold transition-all duration-300 hover:text-white ${
                   activeSection === 'contact'
                     ? 'text-white opacity-100'
@@ -163,7 +139,7 @@ export default function Intro() {
               </button>
             </div>
 
-                                    {/* Mobile Hamburger Button */}
+            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden text-white hover:text-gray-400 transition-colors"
@@ -178,7 +154,7 @@ export default function Intro() {
           <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 rounded-xl shadow-2xl overflow-hidden">
             <div className="flex flex-col">
               <button
-                                onClick={() => handleNavClick('services')}
+                onClick={() => scrollToSection('services')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'services' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -186,7 +162,7 @@ export default function Intro() {
                 Projects
               </button>
               <button
-                                onClick={() => handleNavClick('achievements')}
+                onClick={() => scrollToSection('achievements')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'achievements' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -194,7 +170,7 @@ export default function Intro() {
                 Achievements
               </button>
               <button
-                                onClick={() => handleNavClick('qualities')}
+                onClick={() => scrollToSection('qualities')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'qualities' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -202,7 +178,7 @@ export default function Intro() {
                 Qualities
               </button>
               <button
-                                onClick={() => handleNavClick('about-us')}
+                onClick={() => scrollToSection('about-us')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'about-us' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
@@ -210,7 +186,7 @@ export default function Intro() {
                 About
               </button>
               <button
-                                onClick={() => handleNavClick('contact')}
+                onClick={() => scrollToSection('contact')}
                 className={`text-left px-6 py-4 text-base font-bold transition-all duration-300 hover:bg-white/5 ${
                   activeSection === 'contact' ? 'text-white bg-white/5' : 'text-gray-300'
                 }`}
